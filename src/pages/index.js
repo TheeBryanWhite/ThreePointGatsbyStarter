@@ -5,34 +5,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
-const IndexPage = () => {
-
-  const data = graphql`
-  query homeQuery {
-    site {
-      siteMetadata {
-        title,
-        description
-      }
-    }
-  }
-  `
+const IndexPage = ({data}) => {
 
   return (
     <Layout>
-      <SEO title={data.node.title} description={doc.node.description} />
+      <SEO title="Home" description="Site description" />
+      <h1>Sup?</h1>
+      <p>This is your new project. Get to work!</p>
     </Layout>
   )
-}
-
-IndexPage.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string
-}
-
-IndexPage.defaultProps = {
-  description: '',
-  title: ''
 }
 
 export default IndexPage
